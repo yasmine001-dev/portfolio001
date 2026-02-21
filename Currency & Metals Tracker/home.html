@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GoldWatch — Live Prices</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+</head>
+<body>
+
+<!-- ===== WELCOME OVERLAY ===== -->
+<div id="welcomeOverlay">
+  <div class="welcome-card">
+    <span class="welcome-gem">✦</span>
+    <h1>GoldWatch</h1>
+    <p class="welcome-sub" id="welcomeSub">Live prices for gold, silver & currencies</p>
+
+    <!-- Language -->
+    <div class="lang-row">
+      <button class="lang-btn" id="wLangAr" onclick="setLang('ar')">العربية</button>
+      <button class="lang-btn active" id="wLangEn" onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- Currency base -->
+    <div class="welcome-label" id="welcomeCurrLabel">Display prices in:</div>
+    <div class="currency-selector" id="currSelector"></div>
+
+    <button class="btn-enter" id="btnEnter" onclick="enterSite()">Enter →</button>
+  </div>
+</div>
+
+<!-- ===== AMBIENT ===== -->
+<div class="ambient">
+  <div class="amb-blob amb-1"></div>
+  <div class="amb-blob amb-2"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-gem">✦</div>
+    <span class="logo-text">GoldWatch</span>
+  </div>
+  <div class="nav-right">
+    <div class="live-badge"><div class="live-dot"></div> <span id="liveTxt">Live</span></div>
+
+    <!-- Currency Switcher -->
+    <div class="curr-switcher" id="currSwitcher">
+      <button class="curr-switcher-btn" onclick="toggleCurrDropdown(event)" id="currSwitcherBtn">
+        <span class="csb-flag" id="csbFlag">🇪🇬</span>
+        <span id="csbCode">EGP</span>
+        <span class="csb-arrow">▼</span>
+      </button>
+      <div class="curr-dropdown" id="currDropdown">
+        <div class="drop-label" id="dropLabel">Currency</div>
+        <div id="dropItems"></div>
+      </div>
+    </div>
+
+    <!-- Language switcher -->
+    <div class="nav-lang">
+      <button id="navLangAr" onclick="setLang('ar')">ع</button>
+      <button id="navLangEn" class="active" onclick="setLang('en')">EN</button>
+    </div>
+
+    <!-- Theme toggle — FIXED -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="themeToggle">
+      <div class="toggle-track">
+        <span class="toggle-icon-left">🌙</span>
+        <span class="toggle-icon-right">☀️</span>
+        <div class="toggle-thumb" id="toggleThumb"></div>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-eyebrow" id="heroEyebrow">✦ Real-Time Live Data</div>
+  <h1 id="heroTitle">Gold & Currencies<br/>at a Glance</h1>
+  <p id="heroDesc">Track gold, silver and global currencies — updated every few seconds.</p>
+  <div class="last-update" id="lastUpdateWrap">Last updated: <span id="lastUpdate">--:--:--</span></div>
+</div>
+
+<!-- ===== MAIN SECTION ===== -->
+<div class="section">
+  <div class="section-label">
+    <h2 id="secMetals">Precious Metals</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="metals-grid">
+
+    <!-- GOLD -->
+    <div class="metal-card gold-card">
+      <div class="metal-top">
+        <div class="metal-icon gold-icon">🥇</div>
+        <div class="metal-change change-up" id="goldChange">▲ 0.00%</div>
+      </div>
+      <div class="metal-name" id="goldName">Gold 24K — Troy Ounce</div>
+      <div class="metal-price" id="goldPrice">2,345.60</div>
+      <div class="metal-unit" id="goldUnit">USD / oz &nbsp;·&nbsp; In selected currency: <span id="goldLocal">—</span></div>
+      <div class="metal-stats">
+        <div class="mstat"><div class="mstat-label" id="lblLow">Day Low</div><div class="mstat-val" id="goldLow">—</div></div>
+        <div class="mstat"><div class="mstat-label" id="lblHigh">Day High</div><div class="mstat-val" id="goldHigh">—</div></div>
+        <div class="mstat"><div class="mstat-label" id="lblOpen">Open</div><div class="mstat-val" id="goldOpen">—</div></div>
+      </div>
+      <canvas class="mini-chart" id="goldChart"></canvas>
+    </div>
+
+    <!-- SILVER -->
+    <div class="metal-card silver-card">
+      <div class="metal-top">
+        <div class="metal-icon silver-icon">🥈</div>
+        <div class="metal-change change-up" id="silverChange">▲ 0.00%</div>
+      </div>
+      <div class="metal-name" id="silverName">Silver — Troy Ounce</div>
+      <div class="metal-price" id="silverPrice">29.45</div>
+      <div class="metal-unit" id="silverUnit">USD / oz &nbsp;·&nbsp; In selected currency: <span id="silverLocal">—</span></div>
+      <div class="metal-stats">
+        <div class="mstat"><div class="mstat-label" id="lblLow2">Day Low</div><div class="mstat-val" id="silverLow">—</div></div>
+        <div class="mstat"><div class="mstat-label" id="lblHigh2">Day High</div><div class="mstat-val" id="silverHigh">—</div></div>
+        <div class="mstat"><div class="mstat-label" id="lblOpen2">Open</div><div class="mstat-val" id="silverOpen">—</div></div>
+      </div>
+      <canvas class="mini-chart" id="silverChart"></canvas>
+    </div>
+
+  </div>
+
+  <!-- CURRENCIES -->
+  <div class="section-label">
+    <h2 id="secCurrencies">Exchange Rates vs USD</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="currencies-grid" id="currenciesGrid"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">✦ GoldWatch</span>
+  <span id="footerCredit">Built with HTML / CSS / JS</span>
+  <span class="footer-note" id="footerNote">⚠️ Prices for educational purposes only</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
