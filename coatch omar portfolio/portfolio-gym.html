@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coach Omar — مدرب جيم</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="amb">
+      <div class="ab ab1"></div>
+      <div class="ab ab2"></div>
+    </div>
+
+    <nav>
+      <div class="logo">
+        <div class="logo-gem">💪</div>
+        <span class="logo-txt" id="logoTxt">COACH OMAR</span>
+      </div>
+      <div class="nav-r">
+        <a class="wa-btn" href="https://wa.me/201000000000">
+          <span>💬</span><span class="wa-t" id="waTxt">ابدأ الآن</span>
+        </a>
+        <div class="lang-pill">
+          <button id="bAr" class="on" onclick="setL('ar')">ع</button>
+          <button id="bEn" onclick="setL('en')">EN</button>
+        </div>
+        <button class="theme-btn" onclick="togT()">
+          <div class="tb-track">
+            <span class="tb-icon l">🌙</span><span class="tb-icon r">☀️</span>
+            <div class="tb-thumb"></div>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-chips">
+        <div class="chip chip-a">
+          <span>🔥</span>
+          <div>
+            <div class="chip-num">300+</div>
+            <div class="chip-lbl" id="chipL1">متحول</div>
+          </div>
+        </div>
+        <div class="chip chip-b">
+          <span>⚡</span>
+          <div>
+            <div class="chip-num">4.9★</div>
+            <div class="chip-lbl" id="chipL2">تقييم</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-txt" id="eyeTxt">مدرب معتمد — القاهرة</span>
+        <div class="eyebrow-line"></div>
+      </div>
+
+      <h1>
+        <span class="outline" id="h1a">حوّل</span>
+        <span class="hl" id="h1b">جسمك</span>
+      </h1>
+      <p class="hero-desc" id="heroDesc">
+        برامج تدريبية مخصصة لكل هدف — خسارة وزن، بناء عضلات، أو تحسين اللياقة.
+        نتائج حقيقية في 30 يوم.
+      </p>
+
+      <div class="hero-btns">
+        <button class="btn-main" id="btnBook">ابدأ تحولك 💪</button>
+        <button
+          class="btn-sec"
+          onclick="
+            document
+              .getElementById('skills')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+          id="btnMore"
+        >
+          البرامج
+        </button>
+      </div>
+
+      <div class="hero-statbar">
+        <div class="stat-item">
+          <div class="stat-num">300+</div>
+          <div class="stat-lbl" id="st1">عميل متحول</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-lbl" id="st2">سنوات خبرة</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-lbl" id="st3">تقييم</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">30</div>
+          <div class="stat-lbl" id="st4">يوم لأول نتيجة</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="sec-head">
+        <div class="sec-eyebrow">
+          <div class="sec-line"></div>
+          <span class="sec-tag" id="secTag">التدريب</span>
+          <div class="sec-line"></div>
+        </div>
+        <h2 id="secH2">مهاراتي التدريبية</h2>
+        <p id="secP">تخصصات متعددة لتحقيق أي هدف لياقي تريده</p>
+      </div>
+
+      <div class="sk-grid">
+        <!-- fat loss — wide -->
+        <div class="sk-card sk-wide">
+          <div class="sk-icon">🔥</div>
+          <div class="sk-name" id="skN1">حرق الدهون وإنقاص الوزن</div>
+          <div class="sk-desc" id="skD1">
+            برامج HIIT وكارديو مكثف مع خطة غذائية محسوبة دقيقياً لنتائج مرئية
+            سريعة وآمنة.
+          </div>
+          <div class="sk-bar-row">
+            <span class="sk-bar-lbl" id="skL1">مستوى الإتقان</span
+            ><span class="sk-bar-pct">96%</span>
+          </div>
+          <div class="sk-bar-bg">
+            <div class="sk-bar-fill" style="width: 96%"></div>
+          </div>
+          <div class="sk-tags">
+            <span class="sk-tag">HIIT</span>
+            <span class="sk-tag">Cardio</span>
+            <span class="sk-tag">Calorie Deficit</span>
+            <span class="sk-tag">Body Recomp</span>
+          </div>
+        </div>
+
+        <!-- muscle — tall with results -->
+        <div class="sk-card sk-tall">
+          <div class="sk-icon">💪</div>
+          <div class="sk-name" id="skN2">بناء العضلات</div>
+          <div class="sk-desc" id="skD2">
+            برامج قوة وتضخيم مبنية على progressive overload لتحقيق أقصى نمو
+            عضلي.
+          </div>
+          <div class="sk-bar-row">
+            <span class="sk-bar-lbl" id="skL2">الإتقان</span
+            ><span class="sk-bar-pct">94%</span>
+          </div>
+          <div class="sk-bar-bg">
+            <div class="sk-bar-fill" style="width: 94%"></div>
+          </div>
+          <div class="transform-list">
+            <div class="tr-item">
+              <div class="tr-result" id="tr1">+8 كيلو عضل</div>
+              <div class="tr-name" id="tn1">مصطفى — 3 شهور</div>
+            </div>
+            <div class="tr-item">
+              <div class="tr-result" id="tr2">-15 كيلو دهون</div>
+              <div class="tr-name" id="tn2">خالد — شهرين</div>
+            </div>
+            <div class="tr-item">
+              <div class="tr-result" id="tr3">من مبتدئ → متقدم</div>
+              <div class="tr-name" id="tn3">سارة — 6 أسابيع</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- fitness -->
+        <div class="sk-card">
+          <div class="sk-icon">⚡</div>
+          <div class="sk-name" id="skN3">اللياقة العامة</div>
+          <div class="sk-desc" id="skD3">
+            تمارين شاملة للمبتدئين — تحسين القدرة القلبية والمرونة والتحمل.
+          </div>
+          <div class="sk-bar-row">
+            <span class="sk-bar-lbl" id="skL3">الإتقان</span
+            ><span class="sk-bar-pct">92%</span>
+          </div>
+          <div class="sk-bar-bg">
+            <div class="sk-bar-fill" style="width: 92%"></div>
+          </div>
+        </div>
+
+        <!-- nutrition -->
+        <div class="sk-card">
+          <div class="sk-icon">🥗</div>
+          <div class="sk-name" id="skN4">التغذية الرياضية</div>
+          <div class="sk-desc" id="skD4">
+            خطط غذائية مخصصة — ماكروز، وجبات، وتوقيت الأكل لتسريع النتائج.
+          </div>
+          <div class="sk-bar-row">
+            <span class="sk-bar-lbl" id="skL4">الإتقان</span
+            ><span class="sk-bar-pct">88%</span>
+          </div>
+          <div class="sk-bar-bg">
+            <div class="sk-bar-fill" style="width: 88%"></div>
+          </div>
+        </div>
+
+        <!-- cert card -->
+        <div class="sk-card" style="background: var(--surface2)">
+          <div class="sk-icon">🏅</div>
+          <div class="sk-name" id="skN5">الشهادات والمؤهلات</div>
+          <div class="sk-tags" style="margin-top: 0.5rem">
+            <span class="sk-tag">NASM-CPT</span>
+            <span class="sk-tag">Nutrition Coach</span>
+            <span class="sk-tag">7+ Years Exp.</span>
+            <span class="sk-tag">300+ Clients</span>
+          </div>
+          <div
+            style="
+              margin-top: 1rem;
+              font-size: 0.78rem;
+              color: var(--muted);
+              line-height: 1.7;
+            "
+            id="certDesc"
+          >
+            مدرب معتمد دولياً مع خبرة 7 سنوات في التدريب الفردي والأونلاين.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="programs">
+      <div class="prog-inner">
+        <div class="sec-head">
+          <div class="sec-eyebrow">
+            <div class="sec-line"></div>
+            <span class="sec-tag" id="pgTag">البرامج</span>
+            <div class="sec-line"></div>
+          </div>
+          <h2 id="pgH2">اختار برنامجك</h2>
+          <p id="pgP">كل برنامج مصمم لهدف محدد بنتائج مضمونة</p>
+        </div>
+        <div class="prog-grid">
+          <div class="prog-card">
+            <div class="prog-em">🔥</div>
+            <div class="prog-nm" id="pn1">حرق الدهون</div>
+            <div class="prog-dur" id="pd1">8 أسابيع · 3 حصص/أسبوع</div>
+            <div class="prog-ds" id="pds1">
+              كارديو + تغذية لإنقاص الوزن بأمان
+            </div>
+            <div class="prog-pr" id="pp1">800 ج / شهر</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-em">💪</div>
+            <div class="prog-nm" id="pn2">بناء العضلات</div>
+            <div class="prog-dur" id="pd2">12 أسبوع · 4 حصص/أسبوع</div>
+            <div class="prog-ds" id="pds2">قوة وتضخيم مع خطة بروتين</div>
+            <div class="prog-pr" id="pp2">1000 ج / شهر</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-em">⚡</div>
+            <div class="prog-nm" id="pn3">لياقة عامة</div>
+            <div class="prog-dur" id="pd3">6 أسابيع · 3 حصص/أسبوع</div>
+            <div class="prog-ds" id="pds3">مناسب للمبتدئين تماماً</div>
+            <div class="prog-pr" id="pp3">600 ج / شهر</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-em">🏆</div>
+            <div class="prog-nm" id="pn4">VIP مخصص</div>
+            <div class="prog-dur" id="pd4">مرن · يومي</div>
+            <div class="prog-ds" id="pds4">برنامج فردي 100% + دعم كامل</div>
+            <div class="prog-pr" id="pp4">1500 ج / شهر</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div
+          class="sec-eyebrow"
+          style="justify-content: center; margin-bottom: 0.7rem"
+        >
+          <div class="sec-line"></div>
+          <span class="sec-tag" id="ctTag">تواصل</span>
+          <div class="sec-line"></div>
+        </div>
+        <h2
+          style="
+            font-family: &quot;Bebas Neue&quot;, sans-serif;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.2rem;
+          "
+          id="ctH2"
+        >
+          ابدأ تحولك اليوم
+        </h2>
+        <p id="ctP">استشارة مجانية 15 دقيقة — نحدد هدفك وأنسب برنامج</p>
+        <div class="c-links">
+          <a class="c-link" href="https://wa.me/201000000000"
+            ><span>💬</span><span id="cl1">واتساب</span></a
+          >
+          <a class="c-link" href="tel:+201000000000"
+            ><span>📞</span><span id="cl2">اتصال</span></a
+          >
+          <a class="c-link" href="#"
+            ><span>📍</span><span id="cl3">القاهرة، المعادي</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span class="f-brand">💪 <span id="fName">COACH OMAR</span></span>
+      <span id="fRight">© 2025 جميع الحقوق محفوظة</span>
+      <span
+        style="
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          font-size: 0.66rem;
+        "
+        >HTML · CSS · JS</span
+      >
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
