@@ -1,0 +1,47 @@
+﻿.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #53b9b1;
+  border-top: 3px solid#53b9b1;
+}
+.col1-bg {
+  background: linear-gradient(135deg, #7fd1ca, #53b9b1);
+  color: white;
+  padding: 30px;
+}
+
+.col2-bg {
+  background: linear-gradient(135deg, #53b9b1, #3aa39c);
+  color: white;
+  padding: 30px;
+}
+
+.col3-bg {
+  background: linear-gradient(135deg, #3aa39c, #2c7f79);
+  color: white;
+  padding: 30px;
+}
+.brand-color {
+  color: #53b9b1;
+}
+.card {
+  border: 1px solid #eee;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.logo-item {
+  justify-content: center;
+  align-items: center;
+  filter: blur(2px) grayscale(100%);
+}
+
+.logo-item img {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+}
